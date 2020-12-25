@@ -1,0 +1,13 @@
+
+.page {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-color: #e9e9e9;
+    height: 100vh;
+    color: rgb(190, 119, 119);
+    font-size: 3vw;
+    font-family: Indie Flower;
+    
+    
+}
