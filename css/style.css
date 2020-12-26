@@ -1,19 +1,34 @@
 body {
-    padding: 0 10%;
     margin: 0;
     background-color: #e9e9e9;
-    
+    font-family: Indie Flower;   
+}
+
+
+.pageContainer {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
 }
 
 .page {
-    display: grid;
+    margin: 0 20%;
+    background-color: rgb(250, 224, 182);
+    border-bottom: 10px solid white;
+    display: flex;
     justify-content: center;
-    align-content: center;
-    background-color: #ecdbb5;
+    align-items: center;
+    scroll-snap-align: start;
     height: 100vh;
+}
+
+.home {
     color: rgb(190, 119, 119);
+    font-size: 3vw;    
+}
+
+.story {
+   
+    color: rgb(178, 229, 157);
     font-size: 3vw;
-    font-family: Indie Flower;
-    
-    
 }
