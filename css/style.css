@@ -1,35 +1,113 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+
+
+:root {
+  --primary: #F1F3F6;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 15%;
+}
+
 body {
-    margin: 0;
-    background-color: #e9e9e9;
-    font-family: Indie Flower;   
-    scroll-behavior: smooth;
+  background-color: var(--primary);
 }
 
-
-.pageContainer {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+li,
+a {
+  font-family: 'Indie Flower', cursive;
+  font-weight: 700;
+  font-size: 16px;
+  color: rgb(68, 68, 68);
+  text-decoration: none;
 }
 
-.page {
-    margin: 0 20%;
-    background-color: rgb(250, 224, 182);
-    border-bottom: 10px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scroll-snap-align: start;
-    height: 100vh;
+.logo {
+  cursor: pointer;
+  width: 50px;
 }
 
-.home {
-    color: rgb(190, 119, 119);
-    font-size: 3vw;    
+ul {
+  list-style: none;
 }
 
-.story {
-   
-    color: rgb(178, 229, 157);
-    font-size: 3vw;
+ul li {
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  min-width: 120px;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: -8px -8px 16px 0 rgba(255, 255, 255, 1),
+    8px 8px 16px 0 rgba(0, 0, 0, 0.2);
+  );
+}
+
+ul li:hover {
+  cursor: pointer;
+  box-shadow: inset -8px -8px 16px 0 rgba(255, 255, 255, 1),
+    inset 8px 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Major Mono Display';
+  margin: 100px 0;
+  letter-spacing: 16px;
+  font-size: 80px;
+  font-weight: 100;
+  color: #575757;
+}
+
+.pawButton {
+  height: 75px;
+  width: 75px;
+  background-color: var(--primary);
+  box-shadow: -6px -6px 10px 0 rgb(255, 255, 255), 5px 5px 10px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../assets/svg/PawButton.svg") no-repeat;
+  background-size: 40px;
+  background-position: center center;
+}
+
+.pawButton:hover {
+  cursor: pointer;
+  box-shadow: inset -4px -4px 8px 0 rgb(250, 250, 250), inset 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background: url("../assets/svg/PawHover.svg") no-repeat;
+  background-size: 40px;
+  background-position: center center; 
 }
