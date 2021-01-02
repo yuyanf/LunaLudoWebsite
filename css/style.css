@@ -25,7 +25,16 @@ html::-webkit-scrollbar {
 html {
   scroll-behavior: smooth;
 }
+.scroll-container {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
 
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
 body {
   background-color: var(--primary);
 }

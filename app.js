@@ -13,7 +13,7 @@ function navClick() {
   navText.forEach((text, i) => {
     navText[i].addEventListener("click", () => {
       setStates(i);
-      sections[i].scrollIntoView();
+      sections[i].scrollIntoView({ behavior: "smooth" });
 
       if (i >= sections.length - 1) {
         pawButton.classList.add("pawButtonEnd");
@@ -48,7 +48,7 @@ function pawClick() {
 
     sections.forEach((section, i) => {
       if (i == index) {
-        section.scrollIntoView();
+        section.scrollIntoView({ behavior: "smooth" });
       }
     });
 
@@ -62,7 +62,7 @@ function pawClick() {
 }
 
 function goToHome() {
-  sections[0].scrollIntoView();
+  sections[0].scrollIntoView({ behavior: "smooth" });
 }
 
 function setStates(aIndex) {
