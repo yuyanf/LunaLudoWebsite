@@ -167,11 +167,13 @@ ul li a:hover {
 }
 
 #home {
+  position: relative;
+  top: -14vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 88vh;
+  height: 100vh;
   max-width: 1440px;
   margin: auto;
   text-align: center;
@@ -239,18 +241,18 @@ h1 {
   width: 65px;
   background-color: var(--primary);
   box-shadow: 5px 5px 10px 0 rgb(255, 255, 255),
-    -6px -6px 10px 0 rgba(0, 0, 0, 0.1);
+    -5px -5px 10px 0 rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   background: url("../assets/svg/PawButton.svg") no-repeat;
   background-size: 40px;
   background-position: center center;
   transform: rotate(180deg);
-  transition: all ease 1s;
+  transition: transform ease 1s;
 }
 
 .pawButtonEnd {
   transform: rotate(0deg);
-  box-shadow: -6px -6px 10px 0 rgb(255, 255, 255),
+  box-shadow: -5px -5px 10px 0 rgb(255, 255, 255),
     5px 5px 10px 0 rgba(0, 0, 0, 0.1);
 }
 

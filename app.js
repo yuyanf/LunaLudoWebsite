@@ -1,7 +1,10 @@
-const toggleNav = () => {
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector(".nav-links");
+const pawButton = document.querySelector(".pawButton");
+const sections = document.querySelectorAll("section");
+const burger = document.querySelector(".burger");
+const nav = document.querySelector(".nav-links");
+let index = 0;
 
+const toggleNav = () => {
   window.addEventListener("click", (event) => {
     if (event.target == nav || event.target.parentNode == nav) {
       return;
@@ -17,41 +20,69 @@ const toggleNav = () => {
   });
 };
 
-const nextPage = () => {
-  const pawButton = document.querySelector(".pawButton");
-  const links = document.querySelectorAll("a");
-  console.log(links);
+const goToPage = () => {
+  pawButton.addEventListener("click", () => {
+    if (index == -1) pawButton.classList.remove("pawButtonEnd");
+    index++;
 
-  links.forEach((link) => {
-    console.log(link.href.split("html")[1]);
-  });
+    sections.forEach((section, i) => {
+      if (i == index) {
+        section.scrollIntoView();
+      }
+    });
 
-  pawButton.addEventListener("click", (event) => {
-    console.log(window.location.href.split("html")[1]);
-    switch (window.location.href.split("html")[1]) {
-      case "":
-        window.location.href = links[2].href;
-        break;
-      case "#":
-        window.location.href = links[2].href;
-        break;
-      case "#story":
-        window.location.href = links[3].href;
-        break;
-      case "#stats":
-        window.location.href = links[4].href;
-        break;
-      case "#timeline":
-        window.location.href = links[5].href;
-        pawButton.classList.toggle("pawButtonEnd");
-        break;
-      case "#about":
-        window.location.href = links[1].href;
-        pawButton.classList.toggle("pawButtonEnd");
-        break;
+    setStates(index);
+    if (index >= sections.length - 1) {
+      pawButton.classList.add("pawButtonEnd");
+      index = -1;
     }
   });
 };
 
+function goToHome() {
+  sections[0].scrollIntoView();
+}
+
+function setStates(aIndex) {
+  index = aIndex;
+  switch (aIndex) {
+    case 0:
+      window.history.pushState(null, null, "#home");
+      break;
+    case 1:
+      window.history.pushState(null, null, "#story");
+      break;
+    case 2:
+      window.history.pushState(null, null, "#stats");
+      break;
+    case 3:
+      window.history.pushState(null, null, "#timeline");
+      break;
+    case 4:
+      window.history.pushState(null, null, "#about");
+      break;
+  }
+}
+// const setStates = (aIndex) => {
+//   index = aIndex;
+//   switch (aIndex) {
+//     case 0:
+//       window.history.pushState(null, null, "#home");
+//       break;
+//     case 1:
+//       window.history.pushState(null, null, "#story");
+//       break;
+//     case 2:
+//       window.history.pushState(null, null, "#stats");
+//       break;
+//     case 3:
+//       window.history.pushState(null, null, "#timeline");
+//       break;
+//     case 4:
+//       window.history.pushState(null, null, "#about");
+//       break;
+//   }
+// };
+
 toggleNav();
-nextPage();
+goToPage();
