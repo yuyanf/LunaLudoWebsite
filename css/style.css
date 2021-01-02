@@ -152,7 +152,7 @@ nav {
   text-align: center;
 }
 
-.nav-links li a {
+.nav-links li .nav-text {
   font-family: "Indie Flower", cursive;
   font-weight: 700;
   font-size: 20px;
@@ -161,7 +161,7 @@ nav {
   text-transform: uppercase;
 }
 
-ul li a:hover {
+ul li .nav-text:hover {
   cursor: pointer;
   color: rgb(255, 127, 127);
 }
