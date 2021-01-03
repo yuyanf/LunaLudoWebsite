@@ -126,6 +126,26 @@ window.addEventListener(
   { passive: false }
 );
 
+window.addEventListener("mousemove", parralaxContainer);
+
+function parallax(e) {
+  document.querySelectorAll(".poly").forEach(function (move) {
+    var moving_value = move.getAttribute("data-value");
+    var x = (e.clientX * moving_value) / 100;
+    var y = (e.clientY * moving_value) / 100;
+    move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+  });
+}
+
+function parralaxContainer(e) {
+  polyContainer = document.querySelector(".polygons");
+  moving_value = -10;
+  var x = (e.clientX * moving_value) / 100;
+  var y = (e.clientY * moving_value) / 100;
+  polyContainer.style.transform =
+    "translateX(" + x + "px) translateY(" + y + "px)";
+}
+
 navClick();
 toggleNav();
 pawClick();

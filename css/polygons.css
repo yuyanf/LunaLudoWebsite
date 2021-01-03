@@ -1,0 +1,28 @@
+.polygons {
+  position: fixed;
+  top: 0;
+  pointer-events: none;
+  z-index: 990;
+  height: 100vh;
+  width: 100vw;
+}
+
+.polygons img {
+  position: absolute;
+  width: 1440px;
+  height: 1024px;
+  left: 50%;
+  top: 50%;
+  margin-left: -720px;
+  margin-top: -512px;
+  object-fit: contain;
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
