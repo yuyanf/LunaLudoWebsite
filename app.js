@@ -86,6 +86,46 @@ function setStates(aIndex) {
   }
 }
 
+function debounce(func, timeout) {
+  let timer;
+
+  return (...args) => {
+    const next = () => func(...args);
+
+    if (timer) {
+      clearTimeout(timer);
+    }
+
+    timer = setTimeout(next, timeout > 0 ? timeout : 300);
+  };
+}
+
+var debounce;
+window.addEventListener(
+  "wheel",
+  (e) => {
+    const delta = e.deltaY;
+
+    clearTimeout(debounce);
+    debounce = setTimeout(() => {
+      if ((delta < 0 && index > 0) || (index == -1 && delta < 0)) {
+        if (index == -1) {
+          index = 4;
+        }
+        index--;
+      }
+      if (delta > 0 && index < 4 && index != -1) {
+        index++;
+      }
+      if (delta > 0 && index == 4) {
+        index = -1;
+      }
+      setStates(index);
+    }, 300);
+  },
+  { passive: false }
+);
+
 navClick();
 toggleNav();
 pawClick();

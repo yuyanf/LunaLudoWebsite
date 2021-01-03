@@ -1,0 +1,60 @@
+.burger {
+  padding: 10px;
+  height: 65px;
+  min-width: 65px;
+  border-radius: 50%;
+
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+
+  background-color: var(--primary);
+  box-shadow: -4px -4px 8px 0px rgba(255, 255, 255, 1),
+    4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+
+  transition: transform 2s;
+}
+
+.burger:active {
+  box-shadow: inset -4px -4px 8px 0px rgba(255, 255, 255, 1),
+    inset 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.burger-active {
+  box-shadow: inset -4px -4px 8px 0px rgba(255, 255, 255, 1),
+    inset 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  align-items: center;
+}
+
+.burger > div {
+  height: 7px;
+  margin: 2px;
+  border-radius: 4px;
+  background-color: #2ccbe0;
+}
+
+.burger .line1 {
+  width: 80%;
+}
+
+.burger .line2 {
+  width: 75%;
+}
+
+.burger .line3 {
+  width: 85%;
+}
+
+.burger-active .line1 {
+  width: 80%;
+  transform: translateY(7px) rotate(45deg);
+}
+.burger-active .line2 {
+  display: none;
+}
+.burger-active .line3 {
+  width: 80%;
+  transform: translateY(-4px) rotate(-45deg);
+}
