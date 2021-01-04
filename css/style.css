@@ -8,6 +8,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import "animations.css";
 @import "paw.css";
 @import "burger.css";
 @import "nav.css";
@@ -64,12 +65,10 @@ header {
   width: 50px;
 }
 
-#home {
-  position: relative;
-  top: -14vh;
+section {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: 100vh;
   max-width: 1440px;
@@ -77,63 +76,65 @@ header {
   text-align: center;
 }
 
-#home img {
-  margin: 0 0;
-  margin-top: 350px;
+#home {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    ". ."
+    ". ."
+    ". ."
+    ". ."
+    "ludoBox lunaBox"
+    "homeTitle homeTitle"
+    ". ."
+    ". ."
+    ". ."
+    ". .";
+  top: -14vh;
 }
 
 #home h1 {
-  margin-top: 50px;
-  margin-bottom: 600px;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards, moveUp 2s forwards;
 }
 
-#story {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  max-width: 1440px;
-  margin: auto;
-  text-align: center;
+#home .homeTitle {
+  grid-area: homeTitle;
 }
-#stats {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  max-width: 1440px;
-  margin: auto;
-  text-align: center;
+
+#home .ludoBox {
+  grid-area: ludoBox;
+  animation: 2s fadeIn ease-in forwards, 2s moveRight forwards;
 }
-#timeline {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  max-width: 1440px;
-  margin: auto;
-  text-align: center;
+
+#home .lunaBox {
+  grid-area: lunaBox;
+  animation: 2s fadeIn ease-in forwards, 2s moveLeft forwards;
 }
-#about {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  max-width: 1440px;
-  margin: auto;
-  text-align: center;
+
+#home .ludoCoverImg:hover {
+  animation: upDown 0.5s ease 2;
+}
+
+#home .lunaCoverImg:hover {
+  transform-origin: 210px 220px;
+  animation: rotate360 2s;
 }
 
 h1 {
   font-family: "Major Mono Display";
-  margin: 100px 0;
   letter-spacing: 20px;
   text-indent: 20px;
   font-size: 5rem;
   font-weight: 100;
   color: #575757;
+}
+
+#story {
+}
+#stats {
+}
+#timeline {
+}
+#about {
 }
