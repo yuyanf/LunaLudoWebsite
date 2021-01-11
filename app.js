@@ -105,7 +105,7 @@ window.addEventListener(
   "wheel",
   (e) => {
     const delta = e.deltaY;
-
+    console.log(e.deltaY);
     clearTimeout(debounce);
     debounce = setTimeout(() => {
       if ((delta < 0 && index > 0) || (index == -1 && delta < 0)) {
