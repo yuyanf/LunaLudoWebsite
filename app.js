@@ -27,12 +27,12 @@ function navClick() {
 
 function toggleNav() {
   window.addEventListener("click", (event) => {
-    if (event.target == nav || event.target.parentNode == nav) {
+    if (event.target == nav) {
       return;
     }
 
     if (event.target == burger || event.target.parentNode == burger) {
-      burger.classList.toggle("burger-active");
+      burger.classList.toggle("burger-active"); // Veksler mellom class burger-active og burger ved hver click
       nav.classList.toggle("nav-active");
     } else {
       burger.classList.remove("burger-active");
@@ -44,9 +44,11 @@ function toggleNav() {
 function pawClick() {
   pawButton.addEventListener("click", () => {
     if (index == -1) pawButton.classList.remove("pawButtonEnd");
-    index++;
 
+    index++;
+    console.log("index: ", index);
     sections.forEach((section, i) => {
+      console.log("kjører foreach");
       if (i == index) {
         section.scrollIntoView({ behavior: "smooth" });
       }
@@ -66,6 +68,7 @@ function goToHome() {
 }
 
 function setStates(aIndex) {
+  /*endre url i adressebar*/
   index = aIndex;
   switch (aIndex) {
     case 0:

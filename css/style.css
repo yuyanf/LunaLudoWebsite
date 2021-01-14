@@ -13,6 +13,7 @@
 @import "burger.css";
 @import "nav.css";
 @import "polygons.css";
+@import "story.css";
 
 :root {
   --primary: #f1f3f6;
@@ -30,17 +31,13 @@ html::-webkit-scrollbar {
 html {
   scroll-behavior: smooth;
 }
+
 .scroll-container {
   height: 100vh;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
 }
 
-section {
-  height: 100vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
 body {
   background-color: var(--primary);
 }
@@ -51,8 +48,8 @@ header {
   top: 0;
   height: 12vh;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: center; /* Align items etter cross-axis  */
+  justify-content: space-between; /* Align items etter main-axis */
   max-width: 1440px;
   margin: auto;
   padding: 0px 50px;
@@ -74,9 +71,12 @@ section {
   max-width: 1440px;
   margin: auto;
   text-align: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 #home {
+  /*Id har #*/
   position: relative;
   display: grid;
   grid-template-areas:
@@ -130,8 +130,6 @@ h1 {
   color: #575757;
 }
 
-#story {
-}
 #stats {
 }
 #timeline {

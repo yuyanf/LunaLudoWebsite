@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- DETTE ER FOR Å LINKE TIL CSS FILE I ANNEN MAPPE -->
+
     <link rel="stylesheet" href="css/style.css" />
 
     <link rel="icon" href="../assets/icons/browser_icon.png" />
@@ -14,10 +14,13 @@
   <body>
     <div class="scroll-container">
       <header>
-        <a onclick="window.location.reload();">
+        <a onclick="goToHome();">
+          <!-- Refresher side når man trykker på logo -->
           <img class="logo" src="./assets/svg/PawHover.svg" alt="Paw" />
         </a>
-
+        <div>
+          <div></div>
+        </div>
         <div class="burger">
           <div class="line1"></div>
           <div class="line2"></div>
@@ -90,6 +93,7 @@
           alt=""
         />
       </div>
+
       <section id="home">
         <div class="ludoBox">
           <img
@@ -113,8 +117,28 @@
       </section>
 
       <section id="story">
-        <div>
-          <h1>STORY</h1>
+        <div class="grid-container">
+          <div class="item1">
+            <img
+              class="LunadoCover"
+              src="assets/images/LunaLudo/LunaLudo.jpg"
+              alt="forsidebildet til luna og ludo"
+            />
+          </div>
+          <div class="item2">
+            <h1>
+              Hello! This is Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.
+            </h1>
+          </div>
+          <div class="item3">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
+              necessitatibus eligendi ex. Consequuntur deserunt nesciunt
+              voluptatibus accusantium tenetur tempore, est, ut rerum quaerat
+              unde autem praesentium eveniet repellat repudiandae obcaecati.
+            </p>
+          </div>
         </div>
       </section>
 
