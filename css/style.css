@@ -24,38 +24,24 @@
   box-sizing: border-box;
 }
 
-html::-webkit-scrollbar {
-  display: none;
-}
-html {
-  scroll-behavior: smooth;
-}
-.scroll-container {
-  height: 100vh;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-}
-
-section {
-  height: 100vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
 body {
   background-color: var(--primary);
 }
 
 header {
-  position: sticky;
-  z-index: 999;
+  border: 2px solid red;
+  position: absolute;
   top: 0;
-  height: 12vh;
+  left: 50%;
+  z-index: 999;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1440px;
+  width: 1200px;
   margin: auto;
-  padding: 0px 50px;
+  margin-top: 40px;
+  padding: 10px;
 }
 
 .logo {
@@ -65,32 +51,18 @@ header {
   width: 50px;
 }
 
-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.container {
+  width: 1200px;
   height: 100vh;
-  max-width: 1440px;
   margin: auto;
-  text-align: center;
+  border: 3px solid coral;
 }
 
 #home {
-  position: relative;
   display: grid;
   grid-template-areas:
-    ". ."
-    ". ."
-    ". ."
-    ". ."
     "ludoBox lunaBox"
-    "homeTitle homeTitle"
-    ". ."
-    ". ."
-    ". ."
-    ". .";
-  top: -14vh;
+    "homeTitle homeTitle";
 }
 
 #home h1 {
@@ -130,11 +102,18 @@ h1 {
   color: #575757;
 }
 
-#story {
+/* Mobile devices */
+@media screen and (max-width: 480px) {
 }
-#stats {
+
+/* Tablets */
+@media screen and (max-width: 768px) {
 }
-#timeline {
+
+/* Small screens (Laptops) */
+@media screen and (max-width: 1024px) {
 }
-#about {
+
+/* Large screens (Desktop and up) */
+@media screen and (max-width: 1200px) {
 }

@@ -4,15 +4,9 @@ const burger = document.querySelector(".burger");
 const nav = document.querySelector(".nav-links");
 const navText = document.querySelectorAll(".nav-text");
 
-const idlePeriod = 100;
-const animationDuration = 1000;
-let lastAnimation = 0;
-let index = 0;
-
 function navClick() {
   navText.forEach((text, i) => {
     navText[i].addEventListener("click", () => {
-      setStates(i);
       sections[i].scrollIntoView({ behavior: "smooth" });
 
       if (i >= sections.length - 1) {
@@ -46,14 +40,6 @@ function pawClick() {
     if (index == -1) pawButton.classList.remove("pawButtonEnd");
     index++;
 
-    sections.forEach((section, i) => {
-      if (i == index) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-
-    setStates(index);
-
     if (index >= sections.length - 1) {
       pawButton.classList.add("pawButtonEnd");
       index = -1;
@@ -64,67 +50,6 @@ function pawClick() {
 function goToHome() {
   sections[0].scrollIntoView({ behavior: "smooth" });
 }
-
-function setStates(aIndex) {
-  index = aIndex;
-  switch (aIndex) {
-    case 0:
-      window.history.pushState(null, null, "#home");
-      break;
-    case 1:
-      window.history.pushState(null, null, "#story");
-      break;
-    case 2:
-      window.history.pushState(null, null, "#stats");
-      break;
-    case 3:
-      window.history.pushState(null, null, "#timeline");
-      break;
-    case 4:
-      window.history.pushState(null, null, "#about");
-      break;
-  }
-}
-
-function debounce(func, timeout) {
-  let timer;
-
-  return (...args) => {
-    const next = () => func(...args);
-
-    if (timer) {
-      clearTimeout(timer);
-    }
-
-    timer = setTimeout(next, timeout > 0 ? timeout : 300);
-  };
-}
-
-var debounce;
-window.addEventListener(
-  "wheel",
-  (e) => {
-    const delta = e.deltaY;
-    console.log(e.deltaY);
-    clearTimeout(debounce);
-    debounce = setTimeout(() => {
-      if ((delta < 0 && index > 0) || (index == -1 && delta < 0)) {
-        if (index == -1) {
-          index = 4;
-        }
-        index--;
-      }
-      if (delta > 0 && index < 4 && index != -1) {
-        index++;
-      }
-      if (delta > 0 && index == 4) {
-        index = -1;
-      }
-      setStates(index);
-    }, 300);
-  },
-  { passive: false }
-);
 
 window.addEventListener("mousemove", parralaxContainer);
 
