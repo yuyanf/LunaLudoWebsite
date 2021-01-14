@@ -13,6 +13,11 @@
 @import "burger.css";
 @import "nav.css";
 @import "polygons.css";
+@import "home.css";
+@import "story.css";
+@import "stats.css";
+@import "timeline.css";
+@import "about.css";
 
 :root {
   --primary: #f1f3f6;
@@ -45,52 +50,18 @@ header {
 }
 
 .logo {
-  left: 15vw;
-  top: 4vh;
   cursor: pointer;
-  width: 50px;
+  width: 60px;
 }
 
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 1200px;
   height: 100vh;
   margin: auto;
   border: 3px solid coral;
-}
-
-#home {
-  display: grid;
-  grid-template-areas:
-    "ludoBox lunaBox"
-    "homeTitle homeTitle";
-}
-
-#home h1 {
-  opacity: 0;
-  animation: fadeIn 2s ease-in forwards, moveUp 2s forwards;
-}
-
-#home .homeTitle {
-  grid-area: homeTitle;
-}
-
-#home .ludoBox {
-  grid-area: ludoBox;
-  animation: 2s fadeIn ease-in forwards, 2s moveRight forwards;
-}
-
-#home .lunaBox {
-  grid-area: lunaBox;
-  animation: 2s fadeIn ease-in forwards, 2s moveLeft forwards;
-}
-
-#home .ludoCoverImg:hover {
-  animation: upDown 0.5s ease 2;
-}
-
-#home .lunaCoverImg:hover {
-  transform-origin: 210px 220px;
-  animation: rotate360 2s;
 }
 
 h1 {

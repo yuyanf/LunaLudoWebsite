@@ -1,5 +1,6 @@
 nav {
-  position: sticky;
+  border: green solid 2px;
+  position: absolute;
   top: 12vh;
   z-index: 999;
   max-width: 1440px;
