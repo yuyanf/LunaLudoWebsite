@@ -13,7 +13,11 @@
 @import "burger.css";
 @import "nav.css";
 @import "polygons.css";
+@import "home.css";
 @import "story.css";
+@import "stats.css";
+@import "timeline.css";
+@import "about.css";
 
 :root {
   --primary: #f1f3f6;
@@ -25,100 +29,39 @@
   box-sizing: border-box;
 }
 
-html::-webkit-scrollbar {
-  display: none;
-}
-html {
-  scroll-behavior: smooth;
-}
-
-.scroll-container {
-  height: 100vh;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-}
-
 body {
   background-color: var(--primary);
 }
 
 header {
-  position: sticky;
-  z-index: 999;
+  border: 2px solid red;
+  position: absolute;
   top: 0;
-  height: 12vh;
+  left: 50%;
+  z-index: 999;
+  transform: translateX(-50%);
   display: flex;
   align-items: center; /* Align items etter cross-axis  */
   justify-content: space-between; /* Align items etter main-axis */
-  max-width: 1440px;
+  width: 1200px;
   margin: auto;
-  padding: 0px 50px;
+  margin-top: 40px;
+  padding: 10px;
 }
 
 .logo {
-  left: 15vw;
-  top: 4vh;
   cursor: pointer;
-  width: 50px;
+  width: 60px;
 }
 
-section {
+.container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 1200px;
   height: 100vh;
-  max-width: 1440px;
   margin: auto;
-  text-align: center;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
-
-#home {
-  /*Id har #*/
-  position: relative;
-  display: grid;
-  grid-template-areas:
-    ". ."
-    ". ."
-    ". ."
-    ". ."
-    "ludoBox lunaBox"
-    "homeTitle homeTitle"
-    ". ."
-    ". ."
-    ". ."
-    ". .";
-  top: -14vh;
-}
-
-#home h1 {
-  opacity: 0;
-  animation: fadeIn 2s ease-in forwards, moveUp 2s forwards;
-}
-
-#home .homeTitle {
-  grid-area: homeTitle;
-}
-
-#home .ludoBox {
-  grid-area: ludoBox;
-  animation: 2s fadeIn ease-in forwards, 2s moveRight forwards;
-}
-
-#home .lunaBox {
-  grid-area: lunaBox;
-  animation: 2s fadeIn ease-in forwards, 2s moveLeft forwards;
-}
-
-#home .ludoCoverImg:hover {
-  animation: upDown 0.5s ease 2;
-}
-
-#home .lunaCoverImg:hover {
-  transform-origin: 210px 220px;
-  animation: rotate360 2s;
+  border: 3px solid coral;
 }
 
 h1 {
@@ -130,9 +73,18 @@ h1 {
   color: #575757;
 }
 
-#stats {
+/* Mobile devices */
+@media screen and (max-width: 480px) {
 }
-#timeline {
+
+/* Tablets */
+@media screen and (max-width: 768px) {
 }
-#about {
+
+/* Small screens (Laptops) */
+@media screen and (max-width: 1024px) {
+}
+
+/* Large screens (Desktop and up) */
+@media screen and (max-width: 1200px) {
 }

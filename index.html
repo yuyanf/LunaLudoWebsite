@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.css"
+      integrity="sha512-8M8By+q+SldLyFJbybaHoAPD6g07xyOcscIOQEypDzBS+sTde5d6mlK2ANIZPnSyxZUqJfCNuaIvjBUi8/RS0w=="
+      crossorigin="anonymous"
+    />
 
     <link rel="icon" href="../assets/icons/browser_icon.png" />
 
     <title>Luna & Ludo</title>
   </head>
-
   <body>
-    <div class="scroll-container">
-      <header>
-        <a onclick="goToHome();">
-          <!-- Refresher side når man trykker på logo -->
-          <img class="logo" src="./assets/svg/PawHover.svg" alt="Paw" />
-        </a>
-        <div>
-          <div></div>
-        </div>
-        <div class="burger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </div>
-      </header>
+    <header>
+      <a onclick="window.location.reload();">
+        <img class="logo" src="./assets/svg/PawHover.svg" alt="Paw" />
+      </a>
+
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
 
       <nav>
         <ul class="nav-links">
@@ -47,120 +47,136 @@
           </li>
         </ul>
       </nav>
+    </header>
 
-      <div class="pawButton"></div>
-      <div class="polygons">
-        <img
-          src="assets/svg/GreenishLeaf.svg"
-          class="poly"
-          data-value="-5"
-          alt=""
-        />
-        <img
-          src="assets/svg/PurpleCircle.svg"
-          class="poly"
-          data-value="12"
-          alt=""
-        />
-        <img
-          src="assets/svg/YellowSquare.svg"
-          class="poly"
-          data-value="3"
-          alt=""
-        />
-        <img
-          src="assets/svg/YellowTriangle.svg"
-          class="poly"
-          data-value="-8"
-          alt=""
-        />
-        <img
-          src="assets/svg/PinkHexagon.svg"
-          class="poly"
-          data-value="8"
-          alt=""
-        />
-        <img
-          src="assets/svg/TealPentagon.svg"
-          class="poly"
-          data-value="7"
-          alt=""
-        />
-        <img
-          src="assets/svg/TealTriangle.svg"
-          class="poly"
-          data-value="-5"
-          alt=""
-        />
-      </div>
+    <div class="pawButton"></div>
+    <div class="polygons">
+      <img
+        src="assets/svg/GreenishLeaf.svg"
+        class="poly"
+        data-value="-5"
+        alt=""
+      />
+      <img
+        src="assets/svg/PurpleCircle.svg"
+        class="poly"
+        data-value="12"
+        alt=""
+      />
+      <img
+        src="assets/svg/YellowSquare.svg"
+        class="poly"
+        data-value="3"
+        alt=""
+      />
+      <img
+        src="assets/svg/YellowTriangle.svg"
+        class="poly"
+        data-value="-8"
+        alt=""
+      />
+      <img
+        src="assets/svg/PinkHexagon.svg"
+        class="poly"
+        data-value="8"
+        alt=""
+      />
+      <img
+        src="assets/svg/TealPentagon.svg"
+        class="poly"
+        data-value="7"
+        alt=""
+      />
+      <img
+        src="assets/svg/TealTriangle.svg"
+        class="poly"
+        data-value="-5"
+        alt=""
+      />
+    </div>
 
-      <section id="home">
-        <div class="ludoBox">
-          <img
-            class="ludoCoverImg"
-            src="./assets/svg/ludoCover.svg"
-            alt="LudoCover"
-          />
-        </div>
-
-        <div class="lunaBox">
-          <img
-            class="lunaCoverImg"
-            src="./assets/svg/lunaCover.svg"
-            alt="LunaCover"
-          />
-        </div>
-
-        <div class="homeTitle">
-          <h1>Luna & Ludo</h1>
-        </div>
-      </section>
-
-      <section id="story">
-        <div class="grid-container">
-          <div class="item1">
+    <div id="fullpage">
+      <div class="section">
+        <div class="container" id="home">
+          <div class="ludoBox">
             <img
-              class="LunadoCover"
-              src="assets/images/LunaLudo/LunaLudo.jpg"
-              alt="forsidebildet til luna og ludo"
+              class="ludoCoverImg"
+              src="assets/svg/ludoCover.svg"
+              alt="LudoCover"
             />
           </div>
-          <div class="item2">
-            <h1>
-              Hello! This is Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
-            </h1>
+
+          <div class="lunaBox">
+            <img
+              class="lunaCoverImg"
+              src="assets/svg/lunaCover.svg"
+              alt="LunaCover"
+            />
           </div>
-          <div class="item3">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-              necessitatibus eligendi ex. Consequuntur deserunt nesciunt
-              voluptatibus accusantium tenetur tempore, est, ut rerum quaerat
-              unde autem praesentium eveniet repellat repudiandae obcaecati.
-            </p>
+
+          <div class="homeTitle">
+            <h1>Luna & Ludo</h1>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section id="stats">
-        <div>
+      <div class="section">
+        <div class="container" id="story">
+          <div class="grid-container">
+            <div class="item1">
+              <img
+                class="LunadoCover"
+                src="assets/images/LunaLudo/LunaLudo.jpg"
+                alt="forsidebildet til luna og ludo"
+              />
+            </div>
+            <div class="item2">
+              <h1>
+                Hello! This is Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit.
+              </h1>
+            </div>
+            <div class="item3">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
+                necessitatibus eligendi ex. Consequuntur deserunt nesciunt
+                voluptatibus accusantium tenetur tempore, est, ut rerum quaerat
+                unde autem praesentium eveniet repellat repudiandae obcaecati.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="container" id="stats">
           <h1>STATS</h1>
         </div>
-      </section>
-
-      <section id="timeline">
-        <div>
+      </div>
+      <div class="section">
+        <div class="container" id="timeline">
           <h1>TIMELINE</h1>
         </div>
-      </section>
-
-      <section id="about">
-        <div>
+      </div>
+      <div class="section">
+        <div class="container" id="about">
           <h1>ABOUT</h1>
         </div>
-      </section>
+      </div>
     </div>
 
     <script src="app.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.js"
+      integrity="sha512-Gx/C4x1qubng2MWpJIxTPuWch9O88dhFFfpIl3WlqH0jPHtCiNdYsmJBFX0q5gIzFHmwkPzzYTlZC/Q7zgbwCw=="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      new fullpage("#fullpage", {
+        //options here
+        autoScrolling: true,
+        anchors: ["Home", "Story", "Stats", "Timeline", "About"],
+      });
+    </script>
   </body>
 </html>
