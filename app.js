@@ -25,8 +25,8 @@ window.addEventListener("mousemove", parralaxContainer);
 function parallax(e) {
   document.querySelectorAll(".poly").forEach(function (move) {
     var moving_value = move.getAttribute("data-value");
-    var x = (e.clientX * moving_value) / 100;
-    var y = (e.clientY * moving_value) / 100;
+    var x = ((e.clientX - window.innerWidth / 2) * moving_value) / 100;
+    var y = ((e.clientY - window.innerHeight / 2) * moving_value) / 100;
     move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
   });
 }
@@ -34,8 +34,8 @@ function parallax(e) {
 function parralaxContainer(e) {
   polyContainer = document.querySelector(".polygons");
   moving_value = -10;
-  var x = (e.clientX * moving_value) / 100;
-  var y = (e.clientY * moving_value) / 100;
+  var x = ((e.clientX - window.innerWidth / 2) * moving_value) / 100;
+  var y = ((e.clientY - window.innerHeight / 2) * moving_value) / 100;
   polyContainer.style.transform =
     "translateX(" + x + "px) translateY(" + y + "px)";
 }
