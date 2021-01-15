@@ -1,9 +1,10 @@
 .burger {
+  position: relative;
   padding: 10px;
   height: 65px;
+  margin-top: 50px;
   min-width: 65px;
   border-radius: 50%;
-
   cursor: pointer;
   display: flex;
   flex-direction: column;

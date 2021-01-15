@@ -34,22 +34,18 @@ body {
 }
 
 header {
-  border: 2px solid red;
-  position: absolute;
-  top: 0;
-  left: 50%;
+  position: relative;
   z-index: 999;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center; /* Align items etter cross-axis  */
-  justify-content: space-between; /* Align items etter main-axis */
   width: 1200px;
   margin: auto;
-  margin-top: 40px;
-  padding: 10px;
+  border: 2px solid orange;
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo {
+  margin-top: 50px;
+  text-align: center;
   cursor: pointer;
   width: 60px;
 }

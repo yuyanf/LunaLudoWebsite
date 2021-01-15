@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.css"
-      integrity="sha512-8M8By+q+SldLyFJbybaHoAPD6g07xyOcscIOQEypDzBS+sTde5d6mlK2ANIZPnSyxZUqJfCNuaIvjBUi8/RS0w=="
-      crossorigin="anonymous"
-    />
 
     <link rel="icon" href="../assets/icons/browser_icon.png" />
 
@@ -18,36 +12,34 @@
   </head>
   <body>
     <header>
-      <a onclick="window.location.reload();">
+      <div id="goToHome">
         <img class="logo" src="./assets/svg/PawHover.svg" alt="Paw" />
-      </a>
-
+      </div>
       <div class="burger">
         <div class="line1"></div>
         <div class="line2"></div>
         <div class="line3"></div>
       </div>
-
-      <nav>
-        <ul class="nav-links">
-          <li>
-            <div class="nav-text" id="0">Home</div>
-          </li>
-          <li>
-            <div class="nav-text" id="1">Story</div>
-          </li>
-          <li>
-            <div class="nav-text" id="2">Stats</div>
-          </li>
-          <li>
-            <div class="nav-text" id="3">Timeline</div>
-          </li>
-          <li>
-            <div class="nav-text" id="-1">About</div>
-          </li>
-        </ul>
-      </nav>
     </header>
+    <nav>
+      <ul class="nav-links">
+        <li>
+          <div id="goToHomePage">Home</div>
+        </li>
+        <li>
+          <div id="goToStoryPage">Story</div>
+        </li>
+        <li>
+          <div id="goToStatsPage">Stats</div>
+        </li>
+        <li>
+          <div id="goToTimelinePage">Timeline</div>
+        </li>
+        <li>
+          <div id="goToAboutPage">About</div>
+        </li>
+      </ul>
+    </nav>
 
     <div class="pawButton"></div>
     <div class="polygons">
@@ -96,7 +88,7 @@
     </div>
 
     <div id="fullpage">
-      <div class="section">
+      <section class="section">
         <div class="container" id="home">
           <div class="ludoBox">
             <img
@@ -118,9 +110,9 @@
             <h1>Luna & Ludo</h1>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section">
         <div class="container" id="story">
           <div class="grid-container">
             <div class="item1">
@@ -146,37 +138,25 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="section">
+      </section>
+      <section class="section">
         <div class="container" id="stats">
           <h1>STATS</h1>
         </div>
-      </div>
-      <div class="section">
+      </section>
+      <section class="section">
         <div class="container" id="timeline">
           <h1>TIMELINE</h1>
         </div>
-      </div>
-      <div class="section">
+      </section>
+      <section class="section">
         <div class="container" id="about">
           <h1>ABOUT</h1>
         </div>
-      </div>
+      </section>
     </div>
 
     <script src="app.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.js"
-      integrity="sha512-Gx/C4x1qubng2MWpJIxTPuWch9O88dhFFfpIl3WlqH0jPHtCiNdYsmJBFX0q5gIzFHmwkPzzYTlZC/Q7zgbwCw=="
-      crossorigin="anonymous"
-    ></script>
-
-    <script>
-      new fullpage("#fullpage", {
-        //options here
-        autoScrolling: true,
-        anchors: ["Home", "Story", "Stats", "Timeline", "About"],
-      });
-    </script>
+    <script src="fullpage.js"></script>
   </body>
 </html>

@@ -1,23 +1,7 @@
-const pawButton = document.querySelector(".pawButton");
-const sections = document.querySelectorAll("section");
+const homePage = document.getElementById("home");
 const burger = document.querySelector(".burger");
-const nav = document.querySelector(".nav-links");
-const navText = document.querySelectorAll(".nav-text");
-
-function navClick() {
-  navText.forEach((text, i) => {
-    navText[i].addEventListener("click", () => {
-      sections[i].scrollIntoView({ behavior: "smooth" });
-
-      if (i >= sections.length - 1) {
-        pawButton.classList.add("pawButtonEnd");
-        index = -1;
-      } else {
-        pawButton.classList.remove("pawButtonEnd");
-      }
-    });
-  });
-}
+const nav = document.querySelector("nav");
+const body = document.querySelector("body");
 
 function toggleNav() {
   window.addEventListener("click", (event) => {
@@ -28,26 +12,12 @@ function toggleNav() {
     if (event.target == burger || event.target.parentNode == burger) {
       burger.classList.toggle("burger-active"); // Veksler mellom class burger-active og burger ved hver click
       nav.classList.toggle("nav-active");
+      body.classList.toggle("body-active");
     } else {
       burger.classList.remove("burger-active");
       nav.classList.remove("nav-active");
     }
   });
-}
-
-function pawClick() {
-  pawButton.addEventListener("click", () => {
-    if (index == -1) pawButton.classList.remove("pawButtonEnd");
-
-    if (index >= sections.length - 1) {
-      pawButton.classList.add("pawButtonEnd");
-      index = -1;
-    }
-  });
-}
-
-function goToHome() {
-  sections[0].scrollIntoView({ behavior: "smooth" });
 }
 
 window.addEventListener("mousemove", parralaxContainer);
@@ -70,6 +40,4 @@ function parralaxContainer(e) {
     "translateX(" + x + "px) translateY(" + y + "px)";
 }
 
-navClick();
 toggleNav();
-pawClick();
