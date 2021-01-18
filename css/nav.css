@@ -7,7 +7,7 @@ nav {
   height: 100%;
   opacity: 0;
   display: block;
-  border: 2px green solid;
+  border: 10px rgb(102, 0, 128) solid;
   visibility: hidden;
   background-color: var(--primary);
 }
@@ -18,7 +18,7 @@ nav {
   left: 50%;
   transform: translate(-50%, -50%);
   list-style: none;
-  border: 2px solid green;
+  /* border: 10px solid rgb(255, 96, 157); */
 }
 
 .nav-active {
@@ -27,20 +27,27 @@ nav {
 }
 
 .nav-links li {
+  /* border: 10px solid salmon; */
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Indie Flower", cursive;
-  font-weight: 700;
-  font-size: 40px;
-  color: #757575;
   width: 20vw;
+  min-width: 300px;
   height: 10vh;
+}
+
+.nav-links li {
   text-decoration: none;
   text-transform: uppercase;
+  color: #757575;
+  font-weight: 700;
+  font-size: 40px;
+  font-family: "Indie Flower", cursive;
+  border-radius: 50%;
 }
 
 .nav-links li:hover {
   cursor: pointer;
-  background-color: rgb(218, 218, 218);
+  background-color: #757575;
+  color: white;
 }

@@ -1,11 +1,11 @@
-const homePage = document.getElementById("home");
 const burger = document.querySelector(".burger");
 const nav = document.querySelector("nav");
 const body = document.querySelector("body");
 
 function toggleNav() {
   window.addEventListener("click", (event) => {
-    if (event.target == nav) {
+    // Do nothing if nav or ul is clicked
+    if (event.target == nav || event.target.parentNode == nav) {
       return;
     }
 

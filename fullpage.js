@@ -4635,9 +4635,12 @@ if (window.jQuery && window.fullpage) {
 }
 
 // CANELLU CODE STARTS HERE! ---------------------------
-new fullpage("#fullpage", {
+
+/* Initialize fullpage with options */
+const fp = new fullpage("#fullpage", {
   licenseKey: "YOUR_KEY_HERE",
   autoScrolling: true,
+  //Anchors are used to navigate
   anchors: [
     "Homepage",
     "Storytell",
@@ -4645,6 +4648,8 @@ new fullpage("#fullpage", {
     "TimelineGallery",
     "AboutUs",
   ],
+  //When leaving page Timeline with direction down, add pawbuttonEnd
+  //When leaving page AboutUs with direction up, remove pawbuttonEnd
   onLeave: function (origin, destination, direction) {
     if (origin.anchor == "TimelineGallery" && direction == "down") {
       pawButton.classList.add("pawButtonEnd");
@@ -4655,36 +4660,70 @@ new fullpage("#fullpage", {
   },
 });
 
-document.getElementById("goToHome").addEventListener("click", () => {
+// functions for toggling scrolling when nav-menu is open/closed
+var allowScroll = false;
+function disableScroll() {
+  allowScroll = !allowScroll;
+  fp.setAllowScrolling(false);
+  fp.setKeyboardScrolling(false);
+}
+function enableScroll() {
+  allowScroll = !allowScroll;
+  fp.setAllowScrolling(true);
+  fp.setKeyboardScrolling(true);
+}
+
+//Enable/disable scroll when burger clicked
+const burgeren = document.querySelector(".burger");
+window.addEventListener("click", (event) => {
+  if (event.target == burger || event.target.parentNode == burger) {
+    allowScroll ? enableScroll() : disableScroll();
+  }
+});
+
+/*Links functionality
+  Move to page when clicking navigation links
+  Also add or remove pawButtonEnd on certain pages */
+document.getElementById("goToHome").addEventListener("click", (e) => {
   fullpage_api.moveTo("Homepage", 1);
   pawButton.classList.remove("pawButtonEnd");
+  enableScroll();
 });
 document.getElementById("goToHomePage").addEventListener("click", () => {
   fullpage_api.moveTo("Homepage", 1);
   pawButton.classList.remove("pawButtonEnd");
+  enableScroll();
 });
 document.getElementById("goToStoryPage").addEventListener("click", () => {
   fullpage_api.moveTo("Storytell", 1);
+  enableScroll();
 });
 document.getElementById("goToStatsPage").addEventListener("click", () => {
   fullpage_api.moveTo("Statistics", 1);
+  enableScroll();
 });
 document.getElementById("goToTimelinePage").addEventListener("click", () => {
   fullpage_api.moveTo("TimelineGallery", 1);
+  enableScroll();
 });
 document.getElementById("goToAboutPage").addEventListener("click", () => {
   fullpage_api.moveTo("AboutUs", 1);
   pawButton.classList.add("pawButtonEnd");
+  enableScroll();
 });
 
+/* Pawbutton functionality */
 const pawButton = document.querySelector(".pawButton");
 pawButton.addEventListener("click", () => {
   const url = window.location.href.split("#")[1];
 
+  //Normal if
+  //Add or remove pawButtonEnd on certain pages
   if (url == "TimelineGallery" || url == "AboutUs") {
     pawButton.classList.toggle("pawButtonEnd");
   }
-
+  //Ternary operator ("Single line if")
+  //Syntax: condition ? true : false
   url == "AboutUs"
     ? fullpage_api.moveTo("Homepage", 1)
     : fullpage_api.moveSectionDown();
