@@ -1,5 +1,24 @@
 #home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-areas:
+    "luna ludo"
+    "title title";
+  grid-template-columns: 1fr 1fr;
+}
+
+.lunaBox {
+  grid-area: luna;
+  border: 2px solid coral;
+  animation: moveDown 1s ease-in-out, fadeIn 1s;
+}
+.ludoBox {
+  grid-area: ludo;
+  border: 2px solid coral;
+  animation: moveDown 1s ease-in-out;
+}
+
+.homeTitle {
+  text-align: center;
+  grid-area: title;
+  border: 2px solid coral;
 }

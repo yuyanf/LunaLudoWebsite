@@ -41,3 +41,24 @@ function parralaxContainer(e) {
 }
 
 toggleNav();
+
+(function () {
+  document.onreadystatechange = () => {
+    if (document.readyState === "complete") {
+      /**
+       * Setup your Lazy Line element.
+       * see README file for more settings
+       */
+
+      let el = document.querySelector("#line");
+      let myAnimation = new LazyLinePainter(el, {
+        ease: "easeInOutQuad",
+        strokeWidth: 1,
+        strokeOpacity: 1,
+        strokeColor: "#222F3D",
+        reverse: true,
+      });
+      myAnimation.paint();
+    }
+  };
+})();

@@ -18,6 +18,7 @@
 @import "stats.css";
 @import "timeline.css";
 @import "about.css";
+@import "line.css";
 
 :root {
   --primary: #f1f3f6;
@@ -34,11 +35,14 @@ body {
 }
 
 header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 999;
   width: 1200px;
   margin: auto;
-  border: 2px solid orange;
+  /* border: 1px solid rgb(33, 54, 8); */
   display: flex;
   justify-content: space-between;
 }
@@ -51,6 +55,7 @@ header {
 }
 
 .container {
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;

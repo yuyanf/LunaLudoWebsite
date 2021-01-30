@@ -4638,7 +4638,7 @@ if (window.jQuery && window.fullpage) {
 
 /* Initialize fullpage with options */
 const fp = new fullpage("#fullpage", {
-  licenseKey: "YOUR_KEY_HERE",
+  licenseKey: "20ppTqD#p6",
   autoScrolling: true,
   //Anchors are used to navigate
   anchors: [

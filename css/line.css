@@ -1,0 +1,58 @@
+#line {
+  position: absolute;
+  z-index: 400;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#line path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  animation: line-anim 4s 0.2s ease-in-out, line-anim-out 2s 4s linear forwards;
+}
+
+@keyframes line-anim {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes line-anim-out {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -1;
+  }
+}
+
+.plane {
+  position: absolute;
+  z-index: 400;
+  top: 36%;
+  left: 208px;
+  opacity: 1;
+  transform: rotate(54deg);
+  offset-path: path(
+    "M1.23047 198.082C298.471 -252.915 347.393 235.164 472.541 86.1238C597.69 -62.9166 1188.7 357.189 1158.58 213.547C1129 72.4713 1273.49 369.414 1394.09 198.082"
+  );
+  offset-distance: 0;
+  animation: move 4s ease-in-out forwards;
+}
+
+@keyframes move {
+  0% {
+    offset-distance: 0%;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    offset-distance: 100%;
+  }
+}
